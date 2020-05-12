@@ -1,7 +1,7 @@
 <template>
-    <div id="page-content-wrapper" style="position: relative;">
-      <temp-var-chart :tempVar="tempVar"></temp-var-chart>
-      <today-highlights :highlights="highlights"></today-highlights>
+    <div style="position: relative;">
+        <temp-var-chart :tempVar="tempVar"></temp-var-chart>
+        <today-highlights :highlights="highlights"></today-highlights>
     </div>
 </template>
 
