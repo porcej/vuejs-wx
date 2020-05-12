@@ -110,16 +110,17 @@ export default {
             this.locationEntered();
             var loc = this.location;
             var coords;
-            var geocoder = L.mapquest.geocoding();
+            var geocoder = L.mapquest.geocoding({ thumbMaps: false, maxResults: 1});
             return new Promise(function(resolve, reject) {
                 geocoder.geocode([loc], function(error, response) {
                     var status = response.info.statuscode;
                     if (status == 0) {
                         var result = response.results[0];
+                        console.log(result);
                         coords = {
                             lat:  result.locations[0].latLng.lat,
                             long: result.locations[0].latLng.lng,
-                            full_location: result.providedLocation.location
+                            full_location: result.providedLocation[Object.keys(result.providedLocation)[0]]
                         };
                         resolve(coords);
                     } else {
