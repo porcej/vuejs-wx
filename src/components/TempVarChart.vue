@@ -17,7 +17,6 @@
 <script>
 	export default {
 		props: ['tempVar'],
-		components: {LineChart},
 		data() {
 			return {
 				tempChartData: {

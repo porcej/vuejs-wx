@@ -1,6 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 require("babel-polyfill");
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
   // entry: {
@@ -45,6 +46,9 @@ module.exports = {
       }
     ]
   },
+  plugins: [
+    new VueLoaderPlugin()
+  ],
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'
