@@ -33,5 +33,7 @@ For detailed explanation on how things work, consult the [docs for vue-loader](h
 
 ## Notes
 - Based on Smashing Magazine's Article [Using Vue.js To Create an Interactive Weather Dashboard With APIs](https://www.smashingmagazine.com/2019/02/interactive-weather-dashboard-api-vue-js/).
-- Google API now charges so this will be refractored to use another Geo Location Service
 - *wxUtils.js* was created to pull the utility functions out of *App.vue*
+
+## TODO
+- Change WX API as DarkSky will be going away due to its acquisition by Apple.
