@@ -110,17 +110,17 @@ export default {
             this.locationEntered();
             var loc = this.location;
             var coords;
-            var geocoder = new google.maps.Geocoder();
+            L.mapquest.key = '0wP9O6X6mZAOtvE3TywXaKlawqOhG61G';
+            var geocoder = L.mapquest.geocoding();
             return new Promise(function(resolve, reject) {
-                geocoder.geocode({ address: loc }, function(results, status) {
-                    if (status == google.maps.GeocoderStatus.OK) {
-                        this.lat = results[0].geometry.location.lat();
-                        this.long = results[0].geometry.location.lng();
-                        this.full_location = results[0].formatted_address;
+                geocoder.geocode([loc], function(error, response) {
+                    var status = response.info.statuscode;
+                    if (status == 0) {
+                        var result = response.results[0];
                         coords = {
-                            lat: this.lat,
-                            long: this.long,
-                            full_location: this.full_location
+                            lat:  result.locations[0].latLng.lat,
+                            long: result.locations[0].latLng.lng,
+                            full_location: result.providedLocation.location
                         };
                         resolve(coords);
                     } else {
@@ -136,12 +136,12 @@ export default {
         help mentioning it right now, because the data acquisition method for the weather API has dependency on the output of this method. 
         */
         setFormatCoordinates: async function() {
-            // var coordinates = await this.getCoordinates();
-            var coordinates = {
-                lat: 38.7654628,
-                long: -77.1594546,
-                full_location: "6965 Old Brentford Rd, Alexandria, VA"
-            }
+            var coordinates = await this.getCoordinates();
+            // var coordinates = {
+            //     lat: 38.7654628,
+            //     long: -77.1594546,
+            //     full_location: "6965 Old Brentford Rd, Alexandria, VA"
+            // }
             this.lat = coordinates.lat;
             this.long = coordinates.long;
             this.currentWeather.full_location = coordinates.full_location;
