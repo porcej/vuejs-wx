@@ -110,7 +110,6 @@ export default {
             this.locationEntered();
             var loc = this.location;
             var coords;
-            L.mapquest.key = '0wP9O6X6mZAOtvE3TywXaKlawqOhG61G';
             var geocoder = L.mapquest.geocoding();
             return new Promise(function(resolve, reject) {
                 geocoder.geocode([loc], function(error, response) {
