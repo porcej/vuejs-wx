@@ -19,12 +19,17 @@ npm run build
 ## Getting started
 
 1. Download *.zip or clone project to your machine.
-2. Run `npm install`
-3. Go to *[Google api](https://developers.google.com/maps/documentation/javascript/get-api-key) and create your own key
-4. COpy this key
-5. Go to file `index.html` in the project and insert key instead `insert_here_google_key`
+2. Run `npm install` from the project directory
+3. Go to *[MapQuest Open API](https://developer.mapquest.com/plan_purchase/steps/business_edition/business_edition_free/register)* and create your own key
+4. Copy this key
+5. Go to file `index.html` in the project and insert key instead of `insert_mapquest_open_api_key_here`
 6. Run `npm run dev`
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+## Building For Production
+1. Follow the steps in Getting started
+2. Run `npm run build`
+
 
 ## Notes
 - Based on Smashing Magazine's Article [Using Vue.js To Create an Interactive Weather Dashboard With APIs](https://www.smashingmagazine.com/2019/02/interactive-weather-dashboard-api-vue-js/).
